@@ -2,7 +2,6 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\Collection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -22,6 +21,5 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        $this->accessRoles = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }
