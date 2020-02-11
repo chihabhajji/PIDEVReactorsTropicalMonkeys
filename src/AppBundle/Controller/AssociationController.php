@@ -3,9 +3,10 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Association;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Association controller.
@@ -17,8 +18,7 @@ class AssociationController extends Controller
     /**
      * Lists all association entities.
      *
-     * @Route("/", name="association_index")
-     * @Method("GET")
+     * @Route("/", name="association_index", methods={"GET"})
      */
     public function indexAction()
     {
@@ -34,8 +34,7 @@ class AssociationController extends Controller
     /**
      * Creates a new association entity.
      *
-     * @Route("/new", name="association_new")
-     * @Method({"GET", "POST"})
+     * @Route("/new", name="association_new", methods={"GET","HEAD"})
      */
     public function newAction(Request $request)
     {
@@ -60,8 +59,7 @@ class AssociationController extends Controller
     /**
      * Finds and displays a association entity.
      *
-     * @Route("/{id}", name="association_show")
-     * @Method("GET")
+     * @Route("/{id}", name="association_show", methods={"GET"})
      */
     public function showAction(Association $association)
     {
@@ -76,8 +74,7 @@ class AssociationController extends Controller
     /**
      * Displays a form to edit an existing association entity.
      *
-     * @Route("/{id}/edit", name="association_edit")
-     * @Method({"GET", "POST"})
+     * @Route("/{id}/edit", name="association_edit", methods={"GET","HEAD"})
      */
     public function editAction(Request $request, Association $association)
     {
@@ -100,9 +97,8 @@ class AssociationController extends Controller
 
     /**
      * Deletes a association entity.
-     *
-     * @Route("/{id}", name="association_delete")
-     * @Method("DELETE")
+     * @IsGranted({"ROLE_ADMIN"})
+     * @Route("/{id}", name="association_delete", methods={"DELETE"})
      */
     public function deleteAction(Request $request, Association $association)
     {
@@ -123,7 +119,7 @@ class AssociationController extends Controller
      *
      * @param Association $association The association entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return \Symfony\Component\Form\FormInterface
      */
     private function createDeleteForm(Association $association)
     {

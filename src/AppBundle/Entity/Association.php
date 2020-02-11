@@ -3,17 +3,16 @@
 namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Association
  *
- * @ORM\Table(name="association")
+ * @ORM\Table(name="associations")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AssociationRepository")
  */
-class Association extends BaseUser
+class Association
 {
     /**
      * @var int
@@ -61,6 +60,28 @@ class Association extends BaseUser
      */
     private $displayName;
 
+
+    /**
+     * @Assert\Type("string")
+     */
+    private $description;
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
+    }
+
     /**
      * @Assert\Image(
      *     minWidth = 200,
@@ -83,31 +104,29 @@ class Association extends BaseUser
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="association")
+     * @ORM\ManyToMany(targetEntity="User")
      */
     private $members;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->members = new ArrayCollection();
-    }
-
     /**
-     * @return ArrayCollection
+     * @return mixed
      */
-    public function getMembers(): ArrayCollection
+    public function getMembers()
     {
         return $this->members;
     }
 
-    public function addMember(User$member){
-        $this->members->add($member);
-    }
-    public function removeMember(User $member)
+    /**
+     * @param mixed $members
+     */
+    public function setMembers($members)
     {
-        $this->members->removeElement($member);
+        $this->members = $members;
     }
 
+    public function __construct()
+    {
+        $this->members = new ArrayCollection();
+    }
 }
 

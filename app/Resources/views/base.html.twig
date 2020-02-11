@@ -3,11 +3,35 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="../../../web/assets/front/css/bootstrap.min.css">
+
+            <link rel="stylesheet" type="text/css" href="../../../web/assets/front/css/font-awesome.css">
+
+            <link rel="stylesheet" href="{{ absolute_url(asset('app/Resources/assets/front/css/templatemo-softy-pinko.css')) }}">
+
+            <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <!-- jQuery -->
+            <script src="../../../web/assets/front/js/jquery-2.1.0.min.js"></script>
+
+            <!-- Bootstrap -->
+            <script src="../../../web/assets/front/js/popper.js"></script>
+            <script src="../../../web/assets/front/js/bootstrap.min.js"></script>
+
+            <!-- Plugins -->
+            <script src="../../../web/assets/front/js/scrollreveal.min.js"></script>
+            <script src="../../../web/assets/front/js/waypoints.min.js"></script>
+            <script src="../../../web/assets/front/js/jquery.counterup.min.js"></script>
+            <script src="../../../web/assets/front/js/imgfix.min.js"></script>
+
+            <!-- Global Init -->
+            <script src="../../../web/assets/front/"></script>
+        {% endblock %}
     </body>
 </html>
