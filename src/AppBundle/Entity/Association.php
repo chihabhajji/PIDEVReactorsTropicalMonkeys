@@ -29,6 +29,8 @@ class Association
      */
     private $displayName;
 
+    
+    private $admin;
 
     /**
      * @ORM\Column(type="string")
@@ -107,26 +109,7 @@ class Association
         return $this->id;
     }
 
-    /**
-     * @ORM\ManyToMany(targetEntity="User")
-     */
-    private $members;
 
-    /**
-     * @return mixed
-     */
-    public function getMembers()
-    {
-        return $this->members;
-    }
-
-    /**
-     * @param mixed $members
-     */
-    public function setMembers($members)
-    {
-        $this->members = $members;
-    }
 
     public function __construct()
     {
