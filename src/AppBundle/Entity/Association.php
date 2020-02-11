@@ -24,6 +24,30 @@ class Association
     protected $id;
 
     /**
+     * @ORM\Column(type="string")
+     * @Assert\Type("string")
+     */
+    private $displayName;
+
+
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\Type("string")
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\Image(
+     *     minWidth = 200,
+     *     maxWidth = 400,
+     *     minHeight = 200,
+     *     maxHeight = 400
+     * )
+     */
+    private $profilePic;
+
+    /**
      * @return mixed
      */
     public function getDisplayName()
@@ -55,16 +79,7 @@ class Association
         $this->profilePic = $profilePic;
     }
 
-    /**
-     * @Assert\Type("string")
-     */
-    private $displayName;
 
-
-    /**
-     * @Assert\Type("string")
-     */
-    private $description;
 
     /**
      * @return mixed
@@ -83,16 +98,6 @@ class Association
     }
 
     /**
-     * @Assert\Image(
-     *     minWidth = 200,
-     *     maxWidth = 400,
-     *     minHeight = 200,
-     *     maxHeight = 400
-     * )
-     */
-    private $profilePic;
-
-    /**
      * Get id
      *
      * @return int
@@ -101,7 +106,6 @@ class Association
     {
         return $this->id;
     }
-
 
     /**
      * @ORM\ManyToMany(targetEntity="User")
