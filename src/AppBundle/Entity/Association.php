@@ -7,8 +7,6 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
-
-
 /**
  * Association
  *
@@ -31,6 +29,7 @@ class Association
      * @Assert\Type("string")
      */
     private $displayName;
+
 
     /**
      * @ORM\Column(type="string")
@@ -81,6 +80,8 @@ class Association
         $this->profilePic = $profilePic;
     }
 
+
+
     /**
      * @return mixed
      */
@@ -92,7 +93,7 @@ class Association
     /**
      * @param mixed $description
      */
-    public function setDescription($description): void
+    public function setDescription($description)
     {
         $this->description = $description;
     }
