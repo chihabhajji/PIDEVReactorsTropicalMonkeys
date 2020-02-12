@@ -7,6 +7,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+
+
 /**
  * Association
  *
@@ -29,41 +31,6 @@ class Association
      * @Assert\Type("string")
      */
     private $displayName;
-
-
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="associations")
-     */
-    private $members;
-
-    /**
-     * @param ArrayCollection $members
-     */
-    public function setMembers(ArrayCollection $members): void
-    {
-        $this->members = $members;
-    }
-
-    public function __construct()
-    {
-        $this->members = new ArrayCollection();
-    }
-
-    public function addMember(?User $user){
-        $this->members->add($user);
-    }
-
-    public function removeMember(?User $user){
-        $this->members->removeElement($user);
-    }
-
-    /**
-     * @return Collection|User[]
-     */
-    public function getMembers(): Collection
-    {
-        return $this->members;
-    }
 
     /**
      * @ORM\Column(type="string")
@@ -113,8 +80,6 @@ class Association
     {
         $this->profilePic = $profilePic;
     }
-
-
 
     /**
      * @return mixed
