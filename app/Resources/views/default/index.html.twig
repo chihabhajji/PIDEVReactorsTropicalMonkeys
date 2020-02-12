@@ -20,15 +20,15 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="#" class="logo">
-                            <img src="../../../../web/assets/front/images/logo.png" alt="Softy Pinko"/>
+                            <img src="{{ asset('assets/front/images/logo.png') }}" alt="Reactors-TN" width="35px" height="35px"/>
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="#welcome" class="active">Page d'acceuil</a></li>
-                            <li><a href="#features">A propos</a></li>
-                            <li><a href="#work-process">Missions</a></li>
-                            <li><a href="#testimonials">Associations</a></li>
+                            <li><a href="#features">Missions</a></li>
+                            <li><a href="#work-process">Associations</a></li>
+                            <li><a href="#testimonials">A propos</a></li>
                             <li><a href="#pricing-plans">Listes d'aide</a></li>
                             <li><a href="#blog">S'inscrire / Se connecter</a></li>
                             <li><a href="#contact-us">Contactez nous</a></li>
@@ -52,12 +52,10 @@
             <div class="container">
                 <div class="row">
                     <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
-                        <h1>Reactors relie des organisations à but non lucratif, des donateurs
-                        et des entreprises en Tunisie pour aider à façonner un avenir meilleur.</h1>
-                        <h1>We provide the best <strong>strategy</strong><br>to grow up your <strong>business</strong></h1>
-                        <p>Softy Pinko is a professional Bootstrap 4.0 theme designed by Template Mo
-                            for your company at absolutely free of charge</p>
-                        <a href="#features" class="main-button-slider">Discover More</a>
+                        <h1>Reactors Tunisie</h1>
+                        <p>Reactors relie des  <strong>associations à but non lucratif,</strong><br>
+                            <strong>des donateurs </strong> et des <strong>entreprises</strong> en Tunisie pour aider à façonner un avenir meilleur.</p>
+                        <a href="#features" class="main-button-slider">Decouvrir nos missions</a>
                     </div>
                 </div>
             </div>
@@ -446,70 +444,42 @@
 
     <!-- ***** Blog Start ***** -->
     <section class="section" id="blog">
-        <div class="container">
-            <!-- ***** Section Title Start ***** -->
+        <div class="container login-container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="center-heading">
-                        <h2 class="section-title">Blog Entries</h2>
-                    </div>
+                <div class="col-md-6 login-form-1">
+                    <h3>Login for Form 1</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="ForgetPwd">Forget Password?</a>
+                        </div>
+                    </form>
                 </div>
-                <div class="offset-lg-3 col-lg-6">
-                    <div class="center-text">
-                        <p>Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet nulla vitae, placerat nibh. Cras maximus venenatis molestie.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- ***** Section Title End ***** -->
+                <div class="col-md-6 login-form-2">
+                    <h3>Login for Form 2</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
 
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="blog-post-thumb">
-                        <div class="img">
-                            <img src="images/blog-item-01.png" alt="">
+                            <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
                         </div>
-                        <div class="blog-content">
-                            <h3>
-                                <a href="#">Vivamus ac vehicula dui</a>
-                            </h3>
-                            <div class="text">
-                                Cras aliquet ligula dui, vitae fermentum velit tincidunt id. Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam egestas augue.
-                            </div>
-                            <a href="#" class="main-button">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="blog-post-thumb">
-                        <div class="img">
-                            <img src="../../../../web/assets/front/images/blog-item-02.png" alt="">
-                        </div>
-                        <div class="blog-content">
-                            <h3>
-                                <a href="#">Phasellus convallis augue</a>
-                            </h3>
-                            <div class="text">
-                                Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac. Vestibulum finibus urna ut velit venenatis, vel ultrices sapien mattis.
-                            </div>
-                            <a href="#" class="main-button">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="blog-post-thumb">
-                        <div class="img">
-                            <img src="assets/images/blog-item-03.png" alt="">
-                        </div>
-                        <div class="blog-content">
-                            <h3>
-                                <a href="#">Nam gravida purus non</a>
-                            </h3>
-                            <div class="text">
-                                Maecenas eu erat vitae dui convallis consequat vel gravida nulla. Vestibulum finibus euismod odio, ut tempus enim varius eu.
-                            </div>
-                            <a href="#" class="main-button">Read More</a>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -604,6 +574,7 @@
     </footer>
 
 {% endblock %}
+
 
 
 
