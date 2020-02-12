@@ -7,6 +7,9 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Displayname</th>
+                <th>Description</th>
+                <th>Profilepic</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -14,6 +17,9 @@
         {% for association in associations %}
             <tr>
                 <td><a href="{{ path('association_show', { 'id': association.id }) }}">{{ association.id }}</a></td>
+                <td>{{ association.displayName }}</td>
+                <td>{{ association.description }}</td>
+                <td>{{ association.profilePic }}</td>
                 <td>
                     <ul>
                         <li>
