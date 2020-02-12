@@ -47,6 +47,23 @@ class User extends BaseUser
      */
     private $profilePic;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Association", inversedBy="fos_user")
+     */
+    private $association;
+
+    public function getAssociation(): ?Association
+    {
+        return $this->association;
+    }
+
+    public function setAssociation(?Association $association): self
+    {
+        $this->association = $association;
+
+        return $this;
+    }
+
     public function __construct()
     {
         parent::__construct();

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -29,8 +30,40 @@ class Association
      */
     private $displayName;
 
-    
-    private $admin;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="associations")
+     */
+    private $members;
+
+    /**
+     * @param ArrayCollection $members
+     */
+    public function setMembers(ArrayCollection $members): void
+    {
+        $this->members = $members;
+    }
+
+    public function __construct()
+    {
+        $this->members = new ArrayCollection();
+    }
+
+    public function addMember(?User $user){
+        $this->members->add($user);
+    }
+
+    public function removeMember(?User $user){
+        $this->members->removeElement($user);
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getMembers(): Collection
+    {
+        return $this->members;
+    }
 
     /**
      * @ORM\Column(type="string")
@@ -42,9 +75,9 @@ class Association
      * @ORM\Column(type="string")
      * @Assert\Image(
      *     minWidth = 200,
-     *     maxWidth = 400,
+     *     maxWidth = 1000,
      *     minHeight = 200,
-     *     maxHeight = 400
+     *     maxHeight = 1000
      * )
      */
     private $profilePic;
@@ -109,11 +142,5 @@ class Association
         return $this->id;
     }
 
-
-
-    public function __construct()
-    {
-        $this->members = new ArrayCollection();
-    }
 }
 
