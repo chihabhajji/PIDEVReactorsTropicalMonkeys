@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Mission
@@ -98,11 +99,9 @@ class Mission
      *
      * @return Mission
      */
-    public function setPicture($picture)
+    public function setPicture(File $picture)
     {
         $this->picture = $picture;
-
-        return $this;
     }
 
     /**
