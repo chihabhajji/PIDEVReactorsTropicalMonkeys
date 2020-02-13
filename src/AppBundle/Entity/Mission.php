@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\ManyToOne;
 use Symfony\Component\HttpFoundation\File\File;
 
 /**
@@ -185,5 +187,31 @@ class Mission
     {
         return $this->date;
     }
+
+
+    /**
+     * @ManyToOne(targetEntity="Association")
+     * @JoinColumn(name="association_id", referencedColumnName="id")
+     *
+     */
+    private $association;
+
+    /**
+     * @return mixed
+     */
+    public function getAssociation()
+    {
+        return $this->association;
+    }
+
+    /**
+     * @param mixed $association
+     */
+    public function setAssociation($association): void
+    {
+        $this->association = $association;
+    }
+
+
 }
 
