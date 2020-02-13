@@ -211,7 +211,5 @@ class Mission
     {
         $this->association = $association;
     }
-
-
 }
 

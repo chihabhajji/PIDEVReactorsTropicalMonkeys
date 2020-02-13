@@ -15,12 +15,12 @@ class MissionType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('name')
+        $builder->add('name')
             ->add('picture', FileType::class)
             ->add('description')
             ->add('location')
-            ->add('date', DateType::class);
+            ->add('date', DateType::class)
+            ->add('association');
     }/**
      * {@inheritdoc}
      */
