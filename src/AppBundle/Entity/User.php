@@ -52,12 +52,12 @@ class User extends BaseUser
      */
     private $association;
 
-    public function getAssociation(): ?Association
+    public function getAssociation()
     {
         return $this->association;
     }
 
-    public function setAssociation(?Association $association): self
+    public function setAssociation($association)
     {
         $this->association = $association;
 
