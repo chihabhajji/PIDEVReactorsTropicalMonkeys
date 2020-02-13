@@ -60,17 +60,15 @@
                         <a href="{{ path('backend')}}">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="{{ asset('/assets/back/images/icons/android-icon-48x48.png') }}" alt="" class="dark-logo" />
+                                <img style="margin-top: 20px" src="{{ asset('/assets/back/images/icons/android-icon-48x48.png') }}" alt="" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="{{ asset('/assets/back/images/icons/apple-icon-60x60.png') }}" alt="homepage" class="light-logo" />
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text -->
                             <span class="logo-text">
                                 <!-- dark Logo text -->
-                                <img src="{{ asset('/assets/back/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
+                                <h3  class="dark-logo page-title text-truncate  font-weight-medium mb-1 " >Reactors</h3>
                                 <!-- Light Logo text -->
-                                <img src="{{ asset('/assets/back/images/logo-light-text.png') }}" class="light-logo" alt="Reactors dashboard" />
                             </span>
                         </a>
                     </div>
@@ -361,6 +359,10 @@
 
         {% endblock %}
     </div>
+    <footer class="footer text-center text-muted">
+        All Rights Reserved by Tropical Monkeys.
+
+    </footer>
 </div>
 {% block javascripts %}
     <script src="{{ asset('assets/back/libs/jquery/dist/jquery.min.js') }}"></script>
